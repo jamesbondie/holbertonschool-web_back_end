@@ -31,18 +31,18 @@ export default class Pricing {
     return this._currency;
   }
 
-  set amount(amount) {
-    if (typeof amount !== 'number') {
+  set amount(data) {
+    if (typeof data !== 'number') {
       throw new TypeError('Amount must be a number');
     }
-    this._amount = amount;
+    this._amount = data;
   }
 
-  set currency(currency) {
-    if (!(currency instanceof Currency)) {
+  set currency(data) {
+    if (!(data instanceof Currency)) {
       throw new TypeError('Currency must be an instance of the Currency class');
     }
-    this._currency = currency;
+    this._currency = data;
   }
 
 }

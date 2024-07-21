@@ -1,9 +1,17 @@
 /* eslint-disable */
 export default function createReportObject(employeesList) {
 	return {
-		allEmployees: {...employeesList },
+		allEmployees: { ...employeesList },
 		getNumberOfDepartments() {
-			return Object.keys(this.allEmployees).length;
-		},
-	};
+			let count = 0;
+			for (let department in employeesList)
+			{
+				if (employeesList.hasOwnProperty(department))
+				{
+					count++;
+				}
+			}
+			return count;
+		}
+	  };
 }

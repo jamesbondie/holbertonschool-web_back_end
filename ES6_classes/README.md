@@ -1,0 +1,1 @@
+This directory is JavaScript classing.

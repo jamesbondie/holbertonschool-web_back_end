@@ -1,6 +1,10 @@
-// Initialize size of classroom
-import ClassRoom from './0-classroom';
+import ClassRoom from "./0-classroom";
+function initializeRooms() {
+  const room1 = ClassRoom(19);
+  const room2 = ClassRoom(20);
+  const room3 = ClassRoom(34);
 
-export default function initializeRooms() {
-  return [new ClassRoom(19), new ClassRoom(20), new ClassRoom(34)];
+  return [room1, room2, room3];
 }
+
+export default initializeRooms;

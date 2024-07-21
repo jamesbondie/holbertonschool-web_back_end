@@ -17,9 +17,11 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-		return amount * conversionRate;
-	}
-
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
+      throw new TypeError('Both amount and conversionRate must be numbers');
+    }
+    return amount * conversionRate;
+  }
 
   get amount() {
     return this._amount;

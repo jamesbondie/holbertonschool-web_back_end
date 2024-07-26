@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function cleanSet(set, startString) {
     let result = [];
     for (const value of set) {

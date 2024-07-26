@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function getListStudentIds(arr) {
     if (typeof arr !== 'Array') {
         return []

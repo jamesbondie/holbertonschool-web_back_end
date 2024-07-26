@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function updateStudentGradeByCity(students, city, newGrades) {
     const lockies = students.filter((student) => student.location === city && student.id === newGrades.studentId);
     

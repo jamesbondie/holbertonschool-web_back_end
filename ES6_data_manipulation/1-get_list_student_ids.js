@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default function getListStudentIds(arr) {
-    if (typeof arr !== 'Array') {
-        return []
+    if (students instanceof Array) {
+        return arr.map(function returner(x){return x.id})
     }
-    return arr.map(function returner(x){return x.id})
+    return []
 }

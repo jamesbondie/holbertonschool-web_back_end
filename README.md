@@ -1,1 +1,1 @@
-Repository for back-end
+This repository is consisted of JavaScript projects.

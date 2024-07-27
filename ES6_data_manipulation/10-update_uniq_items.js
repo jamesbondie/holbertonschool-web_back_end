@@ -8,4 +8,5 @@ export default function updateUniqueItems(map) {
             map[x] = 100;
         }
     }
+    return map
 }

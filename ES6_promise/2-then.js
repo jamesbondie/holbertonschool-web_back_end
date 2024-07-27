@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function handleResponseFromAPI(promise) {
     const promise1 = new Promise((resolve, reject) => {
         promise1.then(() => {

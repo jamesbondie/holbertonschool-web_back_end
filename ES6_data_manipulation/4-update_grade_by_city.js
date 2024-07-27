@@ -8,7 +8,6 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
         else {
             x.grade = "N/A"
         }
-        return x;
     });
     return idlockies;
 }

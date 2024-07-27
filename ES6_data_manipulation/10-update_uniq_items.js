@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default function updateUniqueItems(map) {
-    if (typeof map !== Map) {
+    if (!map instanceof Map) {
         throw new Error("Cannot process")
     }
     for (let x in map) {

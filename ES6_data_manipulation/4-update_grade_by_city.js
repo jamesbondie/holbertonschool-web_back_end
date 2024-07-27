@@ -2,7 +2,7 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
     const lockies = students.filter((student) => student.location === city);    
     const idlockies = lockies.map((x) => {
-        const xy = newGrades.find((y) => y.studentId === y.id)
+        const xy = newGrades.find((y) => y.studentId === x.id)
         if (xy) {
             x.grade = xy.grade
         }

@@ -5,8 +5,6 @@ export default function hasValuesFromArray(set, array) {
         if (set.has(value)) {
             return true
         }
-        else {
-            return false
-        }
-    } 
+    }
+    return false 
 }

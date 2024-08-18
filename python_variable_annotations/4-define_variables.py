@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Each number has its own annotation"""
 
 
 a: int = 1

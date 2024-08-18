@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module provides an asynchronous function to wait for a random amount of time.
+This module provides an asynchronous function to wait for random.
 """
 import asyncio
 import random

@@ -5,6 +5,6 @@ from typing import Callable
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """Input float multiplier, output function"""
-    def function(multiplier: float) -> float:
-        return multiplier ** 2
+    def function(value: float) -> float:
+        return value * multiplier
     return function

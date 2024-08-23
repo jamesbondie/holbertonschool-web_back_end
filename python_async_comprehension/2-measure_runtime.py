@@ -4,11 +4,10 @@ This module measures the runtime of executing using asyncio.
 """
 import time
 import asyncio
-from typing import Float
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime() -> Float:
+async def measure_runtime() -> float:
     """Measures and returns the time taken to execute four comprehensions."""
     start_time = time.time()
     await asyncio.gather(

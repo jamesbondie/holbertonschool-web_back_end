@@ -38,7 +38,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """dictionary returner with assert and indexed dataset appended pages"""
+        """dictionary returner with assert and indexed pages"""
         assert 0 <= index < len(self.indexed_dataset())
         assert 0 <= index < len(self.indexed_dataset())
         pages = []

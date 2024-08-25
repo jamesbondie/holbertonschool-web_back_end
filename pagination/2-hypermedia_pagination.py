@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""HyperMedia module with hypermedia functions."""
+"""Server class module."""
 import csv
 import math
-from typing import List
-
-
-def index_range(page: int, page_size: int) -> tuple:
-    """Range of pages"""
-    return (page - 1) * page_size, (page - 1) * page_size + page_size
+from typing import List, Dict, Union
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
@@ -30,24 +26,38 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Page returner"""
+        """Get dataset between range and return it as a list."""
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        range = index_range(page, page_size)
-        page = self.dataset()
-        return page[range[0]:range[1]]
+        start, end = index_range(page, page_size)
+        return_list = []
+        with open('Popular_Baby_Names.csv') as csvfile:
+            reader = csv.reader(csvfile)
+            for i, row in enumerate(reader):
+                if i > start and i <= end:
+                    return_list.append(row)
+        return return_list
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-        """HyperPage Getter method"""
-        page_getter = self.get_page(page, page_size)
-        allPages = len(self.dataset())
-        full_pages = allPages // page_size
-        total_pages = full_pages + bool(allPages % page_size)
+    def get_hyper(self, page: int = 1,
+                  page_size: int = 10) -> Dict[str,
+                                               Union[int, None, List[List]]]:
+        """Collec attributes of page into dictionary,
+        and return it"""
+        with open('Popular_Baby_Names.csv') as file:
+            reader = csv.reader(file)
+            row_counter = 0
+            for row in reader:
+                row_counter += 1
+            data = self.get_page(page, page_size)
+            total_page = (
+                row_counter//len(data)
+                if len(data) != 0
+                else row_counter//page_size)
         return {
-            'page_size': len(page_getter),
+            'page_size': len(data),
             'page': page,
-            'data': page_getter,
-            'next_page': page + 1 if page < total_pages else None,
+            'data': data,
+            'next_page': page + 1 if page < total_page else None,
             'prev_page': page - 1 if page > 1 else None,
-            'total_pages': total_pages
+            'total_pages': total_page
         }

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""Index range returner"""
+
 import csv
 import math
 from typing import List

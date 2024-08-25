@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Index range returner"""
+"""Simple helper function module"""
 
 
 def index_range(page: int, page_size: int) -> tuple:
